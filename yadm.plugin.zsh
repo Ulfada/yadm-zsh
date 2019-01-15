@@ -7,7 +7,6 @@ export YADM_STATUS=0
 _update_yadm_status () {
     local branch_name ahead
     if [[ $(yadm status -s) ]]; then
-        message='%B%F{magenta}There are local configuration changes. Yadm sync required.%f%b'
         YADM_STATUS=1
     else
         branch_name=$(yadm symbolic-ref --short HEAD 2>/dev/null)
